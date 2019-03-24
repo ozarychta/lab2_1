@@ -49,9 +49,19 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void search_sequenceLengthIsGreaterThanOne_keyIsTheMiddleElement() {
+    public void search_sequenceLengthIsGreaterThanOneAndOdd_keyIsTheMiddleElement() {
         int key = 3;
         int[] seq = {1,2,3,4,5};
+
+        SearchResult searchResult = BinarySearch.search(key, seq);
+
+        assertThat(searchResult.getPosition(), is(2));
+    }
+
+    @Test
+    public void search_sequenceLengthIsGreaterThanOneAndEven_keyIsTheMiddleElement() {
+        int key = 3;
+        int[] seq = {1,2,3,4};
 
         SearchResult searchResult = BinarySearch.search(key, seq);
 
